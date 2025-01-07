@@ -22,22 +22,29 @@
       padding-top: 20px; /* 頂部間距 */ 
     }
 
-    /* 側邊欄收縮樣式 */
-        .navbar-collapse {
-            transition: width 0.3s; /* 動畫過渡 */
-        }
+    .navbar-collapse {
+    transition: all 0.3s ease;
+}
 
-    @media (max-width: 768px) {
-      .bg-light {
-        width: 60px; /* 縮起時的側邊欄寬度 */
-      }
+/* 小螢幕時使用漢堡按鈕 */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        display: none; /* 隱藏完整選單 */
     }
+    .navbar-toggler {
+        display: block; /* 顯示漢堡按鈕 */
+    }
+}
 
-    @media (min-width: 769px) {
-      .bg-light {
-        width: 200px; /* 展開時的側邊欄寬度 */
-      }
+/* 大螢幕時顯示完整選單 */
+@media (min-width: 769px) {
+    .navbar-collapse {
+        display: block; /* 始終顯示完整選單 */
     }
+    .navbar-toggler {
+        display: none; /* 隱藏漢堡按鈕 */
+    }
+}
 
     /* 動畫效果 */
     @keyframes slideIn {
@@ -53,34 +60,35 @@
 
     /* 封面圖片樣式 */
     .hero {
-      position: relative;
-      height: 600px; /* 設定高度 */
-      margin-bottom: 30px;
-      overflow: hidden; /* 隱藏超出部分 */
-      background-color: hsl(0, 0%, 21%); /* 加入背景 */
-      display: flex; /* 使用 flexbox 排版 */
-      justify-content: center; /* 水平置中 */
-      align-items: center; /* 垂直置中 */
+        position: relative;
+    height: 600px; /* 設定高度 */
+    margin: 0; /* 移除底部間距 */
+    overflow: hidden; /* 隱藏超出部分 */
+    display: flex; /* 使用flexbox來對齊內容 */
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
     }
     .hero img {
-      width: 100%; /* 圖片自適應寬度 */
-      height: auto; /* 自動高度 */
-      object-fit: cover; /* 保持圖片比例並填滿容器 */
-      animation: slideIn 1s forwards; /* 在這裡應用動畫 */
-      position: absolute; /* 使圖片相對於容器定位 */ 
-      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* 添加陰影效果 */
+        width: 100%; /* 圖片自適應寬度 */
+    height: 100%; /* 圖片自適應高度 */
+    object-fit: cover; /* 保持圖片比例 */
+    animation: slideIn 1s forwards;
+    position: absolute; /* 使圖片相對於容器定位 */
     }
 
     .hero h1 {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      color: #ffffff;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 2rem; 
-    } 
+        position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 2rem; 
+  text-align: center; /* 確保文字置中 */
+  margin: 0; /* 移除間距 */
+    }
+
     /* 卡片樣式 */
     .card {
       background-color: #444444; /* 卡片灰色背景 */
@@ -143,13 +151,38 @@
 <body> 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">MHR:S Game Guide</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">MHR:S Game Guide</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#navbarModal"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#searchModal">搜尋</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="monsters.html">大型魔物清單</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- 懸浮選單 -->
+<div class="modal fade" id="navbarModal" tabindex="-1" aria-labelledby="navbarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="navbarModalLabel">選單</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">首頁</a>
@@ -163,7 +196,9 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </div>
+</div>
+
 
   <div class="container-fluid">
     <div class="row">

@@ -12,6 +12,7 @@
       font-family: Arial, sans-serif;
       background-color: #2c2c2c; /* 深灰背景 */
       color: #ffffff; /* 白色文字 */
+
     }
 
     /* 側邊欄樣式 */
@@ -70,18 +71,63 @@
       background-color: #2c2c2c; /* 模態背景色 */
       color: #ffffff; /* 文字顏色 */
     }
+    /* 小螢幕時使用漢堡按鈕 */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        display: none; /* 隱藏完整選單 */
+    }
+    .navbar-toggler {
+        display: block; /* 顯示漢堡按鈕 */
+    }
+}
+
+/* 大螢幕時顯示完整選單 */
+@media (min-width: 769px) {
+    .navbar-collapse {
+        display: block; /* 始終顯示完整選單 */
+    }
+    .navbar-toggler {
+        display: none; /* 隱藏漢堡按鈕 */
+    }
+
+
   </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">MHR:S Game Guide</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">MHR:S Game Guide</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#navbarModal"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#searchModal">搜尋</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="monsters.html">大型魔物清單</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- 懸浮選單 -->
+<div class="modal fade" id="navbarModal" tabindex="-1" aria-labelledby="navbarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="navbarModalLabel">選單</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">首頁</a>
@@ -95,7 +141,8 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </div>
+</div>
 
   <div class="container-fluid">
     <div class="row">
