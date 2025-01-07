@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHR:S Game Guide - 天迴龍</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2c2c2c; /* 深灰背景 */
+      color: #ffffff; /* 白色文字 */
+    }
+
+    /* 卡片樣式 */
+    .card {
+      background-color: #444444; /* 卡片灰色背景 */
+      border: none; /* 去掉邊框 */
+      color: #ffffff; /* 卡片文字 */
+      overflow: hidden; /* 隱藏超出部分 */
+      cursor: pointer; /* 變更游標樣式 */
+    }
+
+    .card img {
+      border-radius: 5px; /* 圖片圓角 */
+      width: 100%; /* 圖片自適應寬度 */
+      height: auto; /* 自動高度 */
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* 添加陰影效果 */
+    }
+
+    /* 導航按鈕樣式 */
+    .nav-link {
+      color: #ffffff; /* 正常狀態的文字顏色 */
+      transition: background-color 0.3s ease; /* 過度效果 */
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1); /* 滑鼠移至時的背景顏色（半透明） */
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">MHR:S Game Guide</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">首頁</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#searchModal">搜尋</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="monsters.html">大型魔物清單</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h1 class="text-center">MHR:S - 天迴龍</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <img src="images/天迴龍.jpg" class="card-img-top" alt="天迴龍">
+          <div class="card-body">
+            <h5 class="card-title">天迴龍介紹</h5>
+            <p class="card-text">天迴龍是一種強大的魔物，擁有令人畏懼的能力，並且在戰鬥中展現出獨特的技巧。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 搜尋模態 -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="searchModalLabel">搜尋</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="搜尋內容...">
+                <button class="btn btn-primary" type="button">搜尋</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
