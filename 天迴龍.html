@@ -44,24 +44,60 @@
       background-color: #2c2c2c; /* 模態背景色 */
       color: #ffffff; /* 文字顏色 */
     }
-    /* 小螢幕時使用漢堡按鈕 */
-@media (max-width: 768px) {
-    .navbar-collapse {
-        display: none; /* 隱藏完整選單 */
-    }
-    .navbar-toggler {
-        display: block; /* 顯示漢堡按鈕 */
-    }
-}
+    
+    .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* 滑鼠移至時的背景顏色（半透明） */
+        }
 
-/* 大螢幕時顯示完整選單 */
-@media (min-width: 769px) {
-    .navbar-collapse {
-        display: block; /* 始終顯示完整選單 */
-    }
-    .navbar-toggler {
-        display: none; /* 隱藏漢堡按鈕 */
-    } 
+        /* 搜尋窗口模糊效果 */
+        .modal-content {
+            background-color: #2c2c2c; /* 模態背景色 */
+            color: #ffffff; /* 文字顏色 */
+        }
+
+        /* 小螢幕時使用漢堡按鈕 */
+        @media (max-width: 768px) {
+            .navbar-collapse {
+                display: none; /* 隱藏完整選單 */
+            }
+            .navbar-toggler {
+                display: block; /* 顯示漢堡按鈕 */
+            }
+        }
+
+        /* 大螢幕時顯示完整選單 */
+        @media (min-width: 769px) {
+            .navbar-collapse {
+                display: block; /* 始終顯示完整選單 */
+            }
+            .navbar-toggler {
+                display: none; /* 隱藏漢堡按鈕 */
+            }
+        }
+
+        /* 表格樣式 */
+        .table {
+            max-width: 800px; /* 限制表格的最大寬度 */
+            margin: 0 auto; /* 使表格居中 */
+            background-color: #333333; /* 表格背景色 */
+        }
+
+        th, td {
+            text-align: center;
+            color: #ffffff; /* 文字顏色 */
+        }
+
+        th {
+            background-color: #444444; /* 表頭背景色 */
+        }
+
+        tr:nth-child(even) {
+            background-color: #444444; /* 偶數行背景色 */
+        }
+
+        tr:hover {
+            background-color: #555555; /* 鼠標懸停行顏色 */
+        }
   </style>
 </head>
 
@@ -123,7 +159,8 @@
           <img src="images/天迴龍.jpg" class="card-img-top" alt="天迴龍">
           <div class="card-body">
             <h5 class="card-title">天迴龍介紹</h5>
-            <p class="card-text">天迴龍是一種強大的魔物，擁有令人畏懼的能力，並且在戰鬥中展現出獨特的技巧。</p>
+            <p class="card-text">黑蝕龍歷經成長脫皮之後獲得新生的模樣，身披耀眼的甲殼，擁有能覆蓋全身的巨大雙翼。那美麗而神聖的姿態，使其獲得「天迴龍」之名。根據先人留下的文獻，據說牠曾廣泛散布黑色鱗粉，其量甚至多到足以覆蓋整座山，而最終鱗粉所到之處的生物無一倖免，全數滅絕。
+</p>
           </div>
         </div>
       </div>
@@ -149,6 +186,89 @@
       </div>
     </div>
   </div>
+
+  <!-- 道具數據表格 -->
+        <h2 class="text-center mt-4">道具</h2>
+        <table class="table table-bordered table-hover table-dark">
+            <thead>
+                <tr>
+                    <th>道具</th>
+                    <th>任務階級</th>
+                    <th>獲取方式</th>
+                    <th> </th>
+                    <th>數量</th>
+                    <th>掉落機率</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>天迴龍的重殼</td>
+                    <td>MR</td>
+                    <td>目標狩獵</td>
+                    <th> </th>
+                    <td>x1</td>
+                    <td>23%</td>
+                </tr>
+                <tr>
+                    <td>天迴龍的厚鱗</td>
+                    <td>MR</td>
+                    <td>目標狩獵</td>
+                    <th> </th>
+                    <td>x1</td>
+                    <td>33%</td>
+                </tr>
+                <tr>
+                    <td>天迴龍的剛凈爪</td>
+                    <td>MR</td>
+                    <td>目標狩獵</td>
+                    <th> </th>
+                    <td>x1</td>
+                    <td>19%</td>
+                </tr>
+                <tr>
+                    <td>天迴龍的韌尾</td>
+                    <td>MR</td>
+                    <td>目標狩獵</td>
+                    <th> </th>
+                    <td>x1</td>
+                    <td>12%</td>
+                </tr>
+                <tr>
+                    <td>天迴龍的剛角</td>
+                    <td>MR</td>
+                    <td>目標狩獵</td>
+                    <th> </th>
+                    <td>x1</td>
+                    <td>10%</td>
+                </tr>
+                <tr>
+                    <td>天迴龍的天鱗</td>
+                    <td>MR</td>
+                    <td>目標狩獵</td>
+                    <th> </th>
+                    <td>x1</td>
+                    <td>3%</td>
+                </tr>
+                <tr>
+                    <td>天迴龍的厚鱗</td>
+                    <td>MR</td>
+                    <td>剝取素材</td>
+                    <td>身體</td>
+                    <td>x1</td>
+                    <td>39%</td>
+                </tr>
+                <tr>
+                    <td>天迴龍的重殼</td>
+                    <td>MR</td>
+                    <td>剝取素材</td>
+                    <td>身體</td>
+                    <td>x1</td>
+                    <td>30%</td>
+                </tr>
+                
+               <!-- 添加更多數據行 -->
+           </tbody>
+        </table>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
