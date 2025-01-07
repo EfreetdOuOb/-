@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHR:S Game Guide - 爵銀龍</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2c2c2c; /* 深灰背景 */
+      color: #ffffff; /* 白色文字 */
+    }
+
+    /* 卡片樣式 */
+    .card {
+      background-color: #444444; /* 卡片灰色背景 */
+      border: none; /* 去掉邊框 */
+      color: #ffffff; /* 卡片文字 */
+      overflow: hidden; /* 隱藏超出部分 */
+      cursor: pointer; /* 變更游標樣式 */
+    }
+
+    .card img {
+      border-radius: 5px; /* 圖片圓角 */
+      width: 100%; /* 圖片自適應寬度 */
+      height: auto; /* 自動高度 */
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* 添加陰影效果 */
+    }
+
+    /* 導航按鈕樣式 */
+    .nav-link {
+      color: #ffffff; /* 正常狀態的文字顏色 */
+      transition: background-color 0.3s ease; /* 過度效果 */
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1); /* 滑鼠移至時的背景顏色（半透明） */
+    }
+    /*搜尋窗口模糊效果*/
+    .modal-content {
+      background-color: #2c2c2c; /* 模態背景色 */
+      color: #ffffff; /* 文字顏色 */
+    }
+    
+    .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* 滑鼠移至時的背景顏色（半透明） */
+        }
+
+        /* 搜尋窗口模糊效果 */
+        .modal-content {
+            background-color: #2c2c2c; /* 模態背景色 */
+            color: #ffffff; /* 文字顏色 */
+        }
+
+        /* 小螢幕時使用漢堡按鈕 */
+        @media (max-width: 768px) {
+            .navbar-collapse {
+                display: none; /* 隱藏完整選單 */
+            }
+            .navbar-toggler {
+                display: block; /* 顯示漢堡按鈕 */
+            }
+        }
+
+        /* 大螢幕時顯示完整選單 */
+        @media (min-width: 769px) {
+            .navbar-collapse {
+                display: block; /* 始終顯示完整選單 */
+            }
+            .navbar-toggler {
+                display: none; /* 隱藏漢堡按鈕 */
+            }
+        }
+
+        /* 表格樣式 */
+        .table {
+            max-width: 800px; /* 限制表格的最大寬度 */
+            margin: 0 auto; /* 使表格居中 */
+            background-color: #333333; /* 表格背景色 */
+        }
+
+        th, td {
+            text-align: center;
+            color: #ffffff; /* 文字顏色 */
+        }
+
+        th {
+            background-color: #444444; /* 表頭背景色 */
+        }
+
+        tr:nth-child(even) {
+            background-color: #444444; /* 偶數行背景色 */
+        }
+
+        tr:hover {
+            background-color: #555555; /* 鼠標懸停行顏色 */
+        }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">MHR:S Game Guide</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#navbarModal"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#searchModal">搜尋</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="monsters.html">大型魔物清單</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+  
+  <!-- 懸浮選單 -->
+<div class="modal fade" id="navbarModal" tabindex="-1" aria-labelledby="navbarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="navbarModalLabel">選單</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#searchModal">搜尋</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="monsters.html">大型魔物清單</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <div class="container mt-4">
+    <h1 class="text-center">MHR:S - 爵銀龍</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <img src="images/爵銀龍.jpg" class="card-img-top" alt="爵銀龍">
+          <div class="card-body">
+            <h5 class="card-title">爵銀龍介紹</h5>
+            <p class="card-text">身披白銀甲殼、散發優美氣質的巨龍，故名「爵銀龍」。為了指揮噬生蟲奪取生物的精氣，牠會隱身於暗夜之中，從獵物後方發動襲擊。有著充滿威嚴且優雅的外表，但在收集足夠精氣後便會顯露出凶暴的本性，散發如同鮮血般赤紅的光芒。該姿態名為「血氣活化狀態」，並備受世人恐懼。
+</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 搜尋模態 -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="searchModalLabel">搜尋</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="搜尋內容...">
+                <button class="btn btn-primary" type="button">搜尋</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 道具數據表格 -->
+        <h2 class="text-center mt-4">相關素材</h2>
+        <table class="table table-bordered table-hover table-dark">
+            <thead>
+                <tr>
+                    <th>道具</th>
+                    <th>任務階級</th>
+                    <th>獲取方式</th>
+                    <th> </th>
+                    <th>數量</th>
+                    <th>掉落機率</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>爵銀龍的重殼</td>
+                    <td>MR</td>
+                    <td>目標報酬</td>
+                    <th> </th>
+                    <td>x1</td>
+                    <td>22%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的厚鱗</td>
+                    <td>MR</td>
+                    <td>目標報酬</td>
+                    <th> </th>
+                    <td>x1</td>
+                    <td>29%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的重牙</td>
+                    <td>MR</td>
+                    <td>目標報酬</td>
+                    <th> </th>
+                    <td>x1</td>
+                    <td>20%</td>
+                </tr>
+                <tr>
+                    <td>吸食精氣的噬生蟲</td>
+                    <td>MR</td>
+                    <td>目標報酬</td>
+                    <th> </th>
+                    <td>x1</td>
+                    <td>16%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的三叉尾</td>
+                    <td>MR</td>
+                    <td>目標報酬</td>
+                    <th> </th>
+                    <td>x1</td>
+                    <td>10%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的紅血玉</td>
+                    <td>MR</td>
+                    <td>目標報酬</td>
+                    <th> </th>
+                    <td>x1</td>
+                    <td>3%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的重殼</td>
+                    <td>MR</td>
+                    <td>剝取素材</td>
+                    <td>身體</td>
+                    <td>x1</td>
+                    <td>37%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的厚鱗</td>
+                    <td>MR</td>
+                    <td>剝取素材</td>
+                    <td>身體</td>
+                    <td>x1</td>
+                    <td>28%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的重牙</td>
+                    <td>MR</td>
+                    <td>剝取素材</td>
+                    <td>身體</td>
+                    <td>x1</td>
+                    <td>21%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的剛翼</td>
+                    <td>MR</td>
+                    <td>剝取素材</td>
+                    <td>身體</td>
+                    <td>x1</td>
+                    <td>13%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的紅血玉</td>
+                    <td>MR</td>
+                    <td>剝取素材</td>
+                    <td>身體</td>
+                    <td>x1</td>
+                    <td>1%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的三叉尾</td>
+                    <td>MR</td>
+                    <td>剝取素材</td>
+                    <td>切斷</td>
+                    <td>x1</td>
+                    <td>80%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的重殼</td>
+                    <td>MR</td>
+                    <td>剝取素材</td>
+                    <td>切斷</td>
+                    <td>x1</td>
+                    <td>17%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的紅血玉</td>
+                    <td>MR</td>
+                    <td>剝取素材</td>
+                    <td>切斷</td>
+                    <td>x1</td>
+                    <td>3%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的剛角</td>
+                    <td>MR</td>
+                    <td>破壞部位報酬</td>
+                    <td>BodyPart 1</td>
+                    <td>x1</td>
+                    <td>80%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的重牙</td>
+                    <td>MR</td>
+                    <td>破壞部位報酬</td>
+                    <td>BodyPart 1</td>
+                    <td>x2</td>
+                    <td>17%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的紅血玉</td>
+                    <td>MR</td>
+                    <td>破壞部位報酬</td>
+                    <td>BodyPart 1</td>
+                    <td>x1</td>
+                    <td>3%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的剛翼</td>
+                    <td>MR</td>
+                    <td>破壞部位報酬</td>
+                    <td>BodyPart 6</td>
+                    <td>x1</td>
+                    <td>85%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的重殼</td>
+                    <td>MR</td>
+                    <td>破壞部位報酬</td>
+                    <td>BodyPart 6</td>
+                    <td>x1</td>
+                    <td>15%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的重殼</td>
+                    <td>MR</td>
+                    <td>破壞部位報酬</td>
+                    <td>BodyPart 7</td>
+                    <td>x1</td>
+                    <td>70%</td>
+                </tr>
+                <tr>
+                    <td>吸食精氣的噬生蟲</td>
+                    <td>MR</td>
+                    <td>破壞部位報酬</td>
+                    <td>BodyPart 7</td>
+                    <td>x2</td>
+                    <td>30%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的重殼</td>
+                    <td>MR</td>
+                    <td>掉落物</td>
+                    <td> </td>
+                    <td>x1</td>
+                    <td>27%</td>
+                </tr>
+                <tr>
+                    <td>吸食精氣的噬生蟲</td>
+                    <td>MR</td>
+                    <td>掉落物</td>
+                    <td> </td>
+                    <td>x1</td>
+                    <td>20%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的紅血玉</td>
+                    <td>MR</td>
+                    <td>掉落物</td>
+                    <td> </td>
+                    <td>x1</td>
+                    <td>3%</td>
+                </tr>
+                <tr>
+                    <td>龍秘寶</td>
+                    <td>MR</td>
+                    <td>掉落物</td>
+                    <td> </td>
+                    <td>x1</td>
+                    <td>10%</td>
+                </tr>
+                <tr>
+                    <td>古老龍秘寶</td>
+                    <td>MR</td>
+                    <td>掉落物</td>
+                    <td> </td>
+                    <td>x1</td>
+                    <td>40%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的重殼</td>
+                    <td>MR</td>
+                    <td>掉落物</td>
+                    <td>操龍</td>
+                    <td>x1</td>
+                    <td>50%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的厚鱗</td>
+                    <td>MR</td>
+                    <td>掉落物</td>
+                    <td>操龍</td>
+                    <td>x1</td>
+                    <td>30%</td>
+                </tr>
+                <tr>
+                    <td>吸食精氣的噬生蟲</td>
+                    <td>MR</td>
+                    <td>掉落物</td>
+                    <td>操龍</td>
+                    <td>x2</td>
+                    <td>20%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的重殼</td>
+                    <td>MR</td>
+                    <td>隨從艾路的收集物</td>
+                    <td> </td>
+                    <td>x1</td>
+                    <td>45%</td>
+                </tr>
+                <tr>
+                    <td>爵銀龍的厚鱗</td>
+                    <td>MR</td>
+                    <td>隨從艾路的收集物</td>
+                    <td> </td>
+                    <td>x1</td>
+                    <td>33%</td>
+                </tr>
+                <tr>
+                    <td>吸食精氣的噬生蟲</td>
+                    <td>MR</td>
+                    <td>隨從艾路的收集物</td>
+                    <td> </td>
+                    <td>x1</td>
+                    <td>22%</td>
+                </tr>
+                
+               <!-- 添加更多數據行 -->
+           </tbody>
+        </table>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
